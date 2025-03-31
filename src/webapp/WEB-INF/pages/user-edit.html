@@ -20,7 +20,7 @@
 
         <div class="form-group">
             <label>Age:</label>
-            <input type="number" name="age" class="form-control" th:value="${user.age}" required>
+            <input type="number" name="age" class="form-control" min="1" max="120" th:value="${user.age}" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Update User</button>

@@ -22,8 +22,12 @@ import java.util.Properties;
 @ComponentScan(value = "web")
 public class DbConfig {
 
+    private final Environment env;
+
     @Autowired
-    private Environment env;
+    public DbConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public DataSource getDataSource() {
