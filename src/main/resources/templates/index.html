@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="d-flex align-items-center justify-content-center min-vh-100">
+    <div class="overlay-card text-center">
+        <h1 class="mb-4">Welcome!</h1>
+        <form th:action="@{/users}" method="get">
+            <button type="submit" class="btn btn-primary btn-lg">View Users</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

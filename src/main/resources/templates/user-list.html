@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users List</title>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-<div class="container mt-5">
+<body class="d-flex align-items-start justify-content-center pt-5">
+
+<div class="overlay-card container">
+    <a th:href="@{/}" class="btn btn-outline-primary mb-3">Home</a>
     <h1 class="mb-4">Users List</h1>
-    <a th:href="@{/users/add}" class="btn btn-success mb-3">Add New User</a>
+    <a th:href="@{/users/add}" class="btn btn-success mb-3">Add User</a>
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
@@ -30,7 +32,6 @@
                     <input type="hidden" name="id" th:value="${user.id}" />
                     <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                 </form>
-
                 <form th:action="@{/users/delete}" method="post" style="display:inline;">
                     <input type="hidden" name="id" th:value="${user.id}" />
                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>

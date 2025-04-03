@@ -21,6 +21,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "index"; // шаблон index.html
+    }
+
     @GetMapping
     public String showUsers(Model model) {
         model.addAttribute("users", userService.listUsers());
