@@ -43,4 +43,20 @@ public class UserServiceImpl implements UserService {
     public void delete(Long id) {
         userDao.delete(id);
     }
+
+    @Override
+    public void createUser(String name, byte age) {
+        User user = new User();
+        user.setName(name);
+        user.setAge(age);
+        userDao.add(user);
+    }
+
+    @Override
+    public void updateUser(Long id, String name, byte age) {
+        User user = userDao.getUserById(id);
+        user.setName(name);
+        user.setAge(age);
+        userDao.update(user);
+    }
 }

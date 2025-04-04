@@ -9,4 +9,6 @@ public interface UserService {
     List<User> listUsers();
     void update(User user);
     void delete(Long id);
+    void createUser(String name, byte age);
+    void updateUser(Long id, String name, byte age);
 }

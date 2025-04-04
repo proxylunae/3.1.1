@@ -38,11 +38,9 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public String addUser(@RequestParam("name") String name, @RequestParam("age") byte age) {
-        User user = new User();
-        user.setName(name);
-        user.setAge(age);
-        userService.add(user);
+    public String addUser(@RequestParam("name") String name,
+                          @RequestParam("age") byte age) {
+        userService.createUser(name, age);
         return "redirect:/users";
     }
 
@@ -57,10 +55,7 @@ public class UserController {
     public String editUser(@RequestParam("id") Long id,
                            @RequestParam("name") String name,
                            @RequestParam("age") byte age) {
-        User user = userService.getUserById(id);
-        user.setName(name);
-        user.setAge(age);
-        userService.update(user);
+        userService.updateUser(id, name, age);
         return "redirect:/users";
     }
 
